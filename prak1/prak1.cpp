@@ -72,8 +72,8 @@ int main()
     for (int j=0; j <= 1; j++){
      for (int i = 1; i <= order; i++)
         {
-        putchar(a & mask ? '1' : '0');
-        a <<= 1;
+        putchar(b[j] & mask ? '1' : '0');
+        b[j] <<= 1;
         if (i % 8 == 0)
         {
             putchar(' ');
@@ -87,4 +87,3 @@ int main()
     cout << endl;
     return 0;
 }
-
