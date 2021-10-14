@@ -5,14 +5,14 @@ using namespace std;
 int main()
 {
     cout << "Task 1" << ' ';
-    cout << sizeof(int) << ' ';
-    cout << sizeof(short int) << ' ';
-    cout << sizeof(long long int) << ' ';
-    cout << sizeof(float) << ' ';
-    cout << sizeof(double) << ' ';
-    cout << sizeof(long double) << ' ';
-    cout << sizeof(char) << ' ';
-    cout << sizeof(bool) << ' ';
+    cout << sizeof(int) << ' '; //4, long int = int
+    cout << sizeof(short int) << ' '; //2
+    cout << sizeof(long long int) << ' '; //8, bc double the int
+    cout << sizeof(float) << ' '; //4
+    cout << sizeof(double) << ' '; //8
+    cout << sizeof(long double) << ' '; //8, bc long long double would be 16
+    cout << sizeof(char) << ' '; //1
+    cout << sizeof(bool) << ' '; //1
     cout << endl;
 
 
@@ -44,14 +44,14 @@ int main()
         int a;
     };
 
-    mask = 1 << order - 1;
+    mask = 1 << order - 1; // маска побитового сравнения
     for (int i = 1; i <= order; i++)
     {
         putchar(a & mask ? '1' : '0');
         a <<= 1;
-        if (i % 8 == 0)
+        if (i % 8 == 0) // если остаток деления от 8 равен 0
         {
-            putchar(' ');
+            putchar(' '); // то вставляем пробел, отделяя другое значение (отделяем 8 битов от других 8 битов)
         }
         if (i % order - 1 == 0)
         {
