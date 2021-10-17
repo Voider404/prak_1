@@ -58,19 +58,24 @@ int main()
 
 
     cout << "Task 4" << ' ';
-    unsigned int order2 = sizeof(double) * 8;
     union {
         double pi_2;
         int b[2];
     };
     cin >> pi_2;
-    mask = 1 << order2 - 1;
-    for (int j=0; j <= 1; j++){
-     for (int i = 1; i <= order2; i++)
+    
+    for (int j=1; j >= 0; j--){
+        mask = 1 << order - 1;
+     for (int i = 1; i <= order; i++)
         {
         putchar(b[j] & mask ? '1' : '0');
-        b[j] <<= 1;
-        if (i % order2 - 1 == 0)
+        mask >>= 1;
+
+        if (j == 1 && i == 1)
+        {
+            putchar(' ');
+        }
+        if (j == 1 && i == 12)
         {
             putchar(' ');
         }
