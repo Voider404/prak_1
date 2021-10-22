@@ -17,14 +17,14 @@ int main()
 
 
     cout << "Task 2" << ' ';
-    int value; // значение
-    cin >> value;
+    int num_1; // значение
+    cin >> num_1;
     unsigned int order = sizeof(int) * 8; // количество разрядов 4*8 = 32
     unsigned int mask = 1 << order - 1;
     for (int i = 1; i <= order; i++)
     {
-        putchar(value & mask ? '1' : '0');
-        value <<= 1;
+        putchar(num_1 & mask ? '1' : '0');
+        num_1 <<= 1;
         if (i % 8 == 0)
         {
             putchar(' ');
@@ -40,10 +40,10 @@ int main()
     cout << "Task 3" << ' ';
 
     union {
-        float pi;
+        float num_2;
         int a;
     };
-    cin >> pi;
+    cin >> num_2;
     mask = 1 << order - 1; // маска побитового сравнения
     for (int i = 1; i <= order; i++)
     {
@@ -53,16 +53,20 @@ int main()
         {
             putchar(' '); // то вставляем пробел, отделяя другое значение (отделяем 8 битов от других 8 битов)
         }
+        if (i % order - 1 == 0)
+        {
+            putchar(' ');
+        }
     }
     cout << endl;
 
 
     cout << "Task 4" << ' ';
     union {
-        double pi_2;
+        double num_3;
         int b[2];
     };
-    cin >> pi_2;
+    cin >> num_3;
     
     for (int j=1; j >= 0; j--){
         mask = 1 << order - 1;
